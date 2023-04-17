@@ -16,7 +16,7 @@ int main() {
     srand(time(NULL));
     cout<<"address array"<<tab<<endl;
     memset(tab, 0, 10000*sizeof(int));
-    cyfry.open("e:/projekty/private/zadania-cpp/dane/cyfry.txt", ios::out);
+    cyfry.open(string(getenv("DATA_DIR"))+"cyfry.txt", ios::out);
     for (int i = 1; i < 1001; i++) {
         cyfry << i << ":" << (rand() % 10000) + 1 << endl;
     }
@@ -26,7 +26,7 @@ int main() {
     int temp_a = 0;
     int temp_max = 0;
     int miejsce = 0;
-    cyfry.open("e:/projekty/private/zadania-cpp/dane/cyfry.txt", ios::in);
+    cyfry.open(string(getenv("DATA_DIR"))+"cyfry.txt", ios::in);
     string line, c1, c2;
     int lp, value;
     while (!cyfry.eof()) {
